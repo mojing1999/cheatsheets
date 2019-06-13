@@ -323,7 +323,7 @@ nmap <Leader>d :vert diffsplit
 map <F2> :call TitleDet()<cr>
 function! AddTitle()
     call append(0,"/*****************************************************************************")
-    call append(1," *  Copyright (C) 2014 - 2019, CT-ACCEL. All rights reserverd.")
+    call append(1," *  Copyright (C) 2003 - 2019, Justin. All rights reserverd.")
     call append(2," *  ")
     call append(3," *  Name:\t".expand("%:t"))
     call append(4," *  Auth:\tJustin Mo[mojing1999@gmail.com]")
