@@ -1,3 +1,23 @@
+###############################################################################
+#   zsh
+#   yum install zsh -y
+#   
+#   oh-my-zsh
+#   sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+#   
+#   autojump
+#   git clone git://github.com/wting/autojump.git
+#   cd autojump
+#   ./install.py or ./uninstall.py
+#   
+#   plugin 'zsh-syntax-highlighting'
+#   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+#   
+#   plugin 'zsh-autosuggestions'
+#   git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+#   
+###############################################################################
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -104,3 +124,8 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 bindkey ',' autosuggest-accept
+
+
+[[ -s /home/justin/.autojump/etc/profile.d/autojump.sh ]] && source /home/justin/.autojump/etc/profile.d/autojump.sh
+
+autoload -U compinit && compinit -u
