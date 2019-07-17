@@ -637,7 +637,7 @@ Plug 'octol/vim-cpp-enhanced-highlight', { 'for': [ 'c', 'cpp' ] }
 "一只说话的狗
 Plug 'mhinz/vim-startify'
 
-
+Plug 'zxqfl/tabnine-vim'
 
 
 "自动补全
