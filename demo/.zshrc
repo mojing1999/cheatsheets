@@ -122,10 +122,14 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-#
-bindkey ',' autosuggest-accept
+[ -f ~/.alias ] && source ~/.alias
+
+
+bindkey '^ ' autosuggest-accept
 
 
 [[ -s /home/justin/.autojump/etc/profile.d/autojump.sh ]] && source /home/justin/.autojump/etc/profile.d/autojump.sh
 
 autoload -U compinit && compinit -u
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

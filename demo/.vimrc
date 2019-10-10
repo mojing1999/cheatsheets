@@ -399,9 +399,12 @@ let NERDTreeChDirMode=2
 " autocmd VimEnter * if !argc() | NERDTree | endif
 
 "------------------------------------------------------------------------------
-
+" {{
 " Taglist
-nmap tl :Tlist<CR>
+" nmap tl :Tlist<CR>
+nmap tl :call CallTaglistOrBar()<CR>
+function! CallTaglistOrBar()
+    if &filetype != 'go'
 let Tlist_Show_One_File=1
 let Tlist_Ctags_Cmd="/usr/bin/ctags"	" 设置ctags
 let Tlist_Exit_OnlyWindow=1				" 最后一个窗口退出
@@ -421,6 +424,16 @@ let Tlist_WinWidth=35                   " Set the window 40 cols wide.
 let Tlist_Close_On_Select=1             " Close the list when a item is selected  
 let Tlist_Use_SingleClick=1             " Go To Target By SingleClick  
 
+        nmap tl :Tlist<CR>
+    else 
+        let g:tagbar_ctags_bin='ctags'
+        let g:tagbar_width=30
+        let g:tagbar_autofocus = 1
+        autocmd BufReadPost *.cpp, *.c, *.h, *.hpp, *.cc, *.cxx call tagbar#autoopen() 
+        nmap tl :TagbarToggle<CR>
+    endif
+endfunction
+"}}
 "------------------------------------------------------------------------------
 
 " LeaderF
@@ -645,6 +658,14 @@ Plug 'zxqfl/tabnine-vim'
 
 "自动弹出提示
 Plug 'vim-scripts/AutoComplPop'
+
+" For Golang
+"Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+Plug 'Blackrush/vim-gocode'
+
+Plug 'majutsushi/tagbar'
 
 call plug#end()
 
