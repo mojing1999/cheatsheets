@@ -57,6 +57,7 @@ let mapleader=";"
 let g:mapleader=";"
 " History
 set history=10000
+set path+=**
 
 " enable filetype plugin
 filetype on
@@ -586,7 +587,14 @@ let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
 let g:airline_theme='molokai'
 let g:airline_powerline_fonts = 1
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" vim-gocode
+imap <F6> <C-x><C-o>
+
+" gotest-vim
+let g:gotests_bin = 'gotests'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "   Plug
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
@@ -662,6 +670,9 @@ Plug 'vim-scripts/AutoComplPop'
 " For Golang
 "Plug 'fatih/vim-go'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+" Gotest
+Plug 'buoto/gotests-vim'
 
 Plug 'Blackrush/vim-gocode'
 
